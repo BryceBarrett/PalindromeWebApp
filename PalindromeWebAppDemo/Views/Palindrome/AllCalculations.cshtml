@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Calculated Palindromes";
+}
+
+<h3 class="text-center">Paragraph Statistics</h3>
+<table class="table table-dark">
+    <tr style="font-weight:bolder">
+        <td>Palindrome Words</td>
+        <td>Palindrome Sentences</td>
+    </tr>
+    <tr>
+        <td>@ViewData["numPalindrome"]</td>
+        <td>@ViewData["numPalSentence"]</td>
+    </tr>
+</table>
+
+<h4 class="text-center">Words Containing your letter:</h4>
+
+
+<table class="table table-dark">
+
+    @foreach (string s in (List<string>)ViewData["wordsWithLetter"])
+    {
+        <tr>
+            <td>@s</td>
+        </tr>
+
+    }
+</table>
+
+
+<h4 class="text-center">Unique words in your paragraph:</h4>
+
+<table class="table table-dark">
+    <tr>
+        <td>Words</td>
+        <td>Count</td>
+    </tr>
+    @foreach (KeyValuePair<string, int> item in (Dictionary<string, int>)ViewData["uniqueWords"])
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+
+    }
+</table>

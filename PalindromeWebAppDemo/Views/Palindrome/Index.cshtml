@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Palindrome Calculator";
+}
+
+<h3 class="text-center">Palindrome Calculator</h3>
+
+<form action="Palindrome/AllCalculations" method="post" id="entryForm">
+    <fieldset>
+        <div class="form-group">
+            <label for="paragraphTextArea">Enter Paragraph:</label>
+            <textarea class="form-control" id="paragraphTextArea" rows="3"
+                      placeholder="Your paragraph here" form="entryForm" name="paragraph" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="letterText">Enter Letter:</label>
+            <input class="form-control" type="text" name="letter" id="letterText"/>
+        </div>
+        <button type="submit" class="btn btn-outline-success">Calculate</button>
+    </fieldset>
+</form>
